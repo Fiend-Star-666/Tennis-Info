@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import com.intern.tennis.primary.Player;
+import org.springframework.stereotype.Service;
 
+import com.intern.tennis.primary.Player;
+@Service
 public class CsvToDb {
 	
 	List<Player> players= new ArrayList<>();
@@ -23,11 +25,9 @@ public class CsvToDb {
 				while(inptData.hasNextLine()){
 					String fullData=inptData.nextLine();
 					String[] splitData = fullData.split(",");
-					System.out.println(fullData);
 					
 					String srank=splitData[0].trim();
 					
-					System.out.println(srank);
 					Integer rank = Integer.parseInt(srank);
 					
 					String playerId = (splitData[1].trim());
@@ -37,7 +37,6 @@ public class CsvToDb {
 					String dateOfBirth = splitData[4].trim();
 					
 					Integer points = Integer.parseInt(splitData[5].trim());
-
 									
 						Player newplayer = new Player();
 								
@@ -45,11 +44,12 @@ public class CsvToDb {
 							
 						newplayer.setName(name);
 							
-							
 						SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 							
 						Date dateDOB = formatter.parse(dateOfBirth);
-							
+						
+						System.out.println(dateDOB.getTime());
+						
 						newplayer.setDateOfBirth(dateDOB);
 						
 						newplayer.setPoints(points);
@@ -57,10 +57,10 @@ public class CsvToDb {
 						players.add(newplayer);
 						
 					}
+				inptData.close();
 				
 				return players;
 
 			}
-
 
 }

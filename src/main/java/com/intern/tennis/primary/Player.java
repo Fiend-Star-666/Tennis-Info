@@ -1,11 +1,16 @@
 package com.intern.tennis.primary;
 
+import java.time.*;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -26,6 +31,7 @@ public class Player {
 	@Column(unique = true)
 	private Integer rankOfPlayer;
 	
+	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth; 
 	
 	private Integer points;

@@ -1,0 +1,22 @@
+
+spring.jpa.show-sql=true
+logging.level.org.springframework.web = DEBUG
+
+#File based h2 DB
+spring.datasource.url=jdbc:h2:file:C:/temp/test_db1;
+DB_CLOSE_ON_EXIT=FALSE;
+AUTO_RECONNECT=TRUE;
+DB_CLOSE_DELAY=-1
+#In memory
+#spring.datasource.url=jdbc:h2:mem:testdb:security_permission;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driverClassName=org.h2.Driver
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+#Use datasource.initialization-mode if you are configured to use file based h2 and data.sql
+spring.datasource.initialization-mode=always
+spring.jpa.defer-datasource-initialization=true
+<property name="connection.url">jdbc:h2:./data/contactmgr;DB_CLOSE_ON_EXIT=TRUE;FILE_LOCK=NO</property>

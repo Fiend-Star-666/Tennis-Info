@@ -12,3 +12,11 @@ public class TennisInfoApplication {
 	}
 
 }
+
+/*
+spring.datasource.url=jdbc:mysql://localhost:3306/tennisplayers
+spring.datasource.password=0000
+spring.datasource.username=root
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+*/
